@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 //connect to database and log if successful
+//uses env variable so we don't expose password for connecting to db
 mongoose.connect(process.env.MONGO).then(() => {
     console.log("Connected to database");
 }).catch((err) => {
