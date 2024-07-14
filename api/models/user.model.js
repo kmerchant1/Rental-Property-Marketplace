@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+//user schema for connecting to mongodb
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
