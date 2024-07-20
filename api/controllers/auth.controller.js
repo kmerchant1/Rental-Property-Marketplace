@@ -29,6 +29,8 @@ export const signin = async (req, res, next) => {
         
         //authenticate user with jwt
         const token = jwt.sign({id:validUser._id}, process.env.JWT_SECRET);
+        //don't want to give back password (even though it is hashed)
+        //separate password from rest of the info which we will pass back
         const {password: pass, ...nonPassInfo} = validUser._doc;
         res.cookie('token', token, {httpOnly:true})
         .status(200)
